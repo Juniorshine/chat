@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轻量聊天 Web App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div>
+          <h1>轻量聊天</h1>
+          <p>可嵌入 WebView，方便后续封装到 iOS/Android。</p>
+        </div>
+        <button class="ghost" id="clearChat" type="button">清空对话</button>
+      </header>
+
+      <main class="chat-panel">
+        <section class="chat-list" id="chatList" aria-live="polite"></section>
+      </main>
+
+      <footer class="composer">
+        <div class="input-wrapper">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="输入消息，回车发送"
+            autocomplete="off"
+          />
+          <span class="hint">本地演示，不会上传消息</span>
+        </div>
+        <button class="primary" id="sendButton" type="button">发送</button>
+      </footer>
+    </div>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="avatar"></div>
+        <div class="content">
+          <div class="meta">
+            <span class="name"></span>
+            <span class="time"></span>
+          </div>
+          <p class="text"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
